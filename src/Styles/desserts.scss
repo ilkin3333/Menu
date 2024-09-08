@@ -1,0 +1,139 @@
+.desserts-container {
+  text-align: start;
+  margin-top: 20px;
+  padding: 0 20px; /* Küçük ekranlar için kenar boşluğu */
+}
+
+.desserts-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px; /* Kartlar arasına boşluk ekleyelim */
+}
+
+.dessert-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: start;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+
+  width: 100%; /* Kart genişliğini varsayılan olarak %100 yapalım */
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  p {
+    z-index: 1;
+    width: 65px;
+    height: 21px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+}
+
+.dessert-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 8px;
+}
+
+.modal-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.modal-content {
+  text-align: center;
+  background-color: rgb(204, 194, 194);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 12px;
+  }
+}
+
+.mainmodal {
+  position: absolute;
+  width: 358px;
+  display: flex;
+  height: 211px;
+  z-index: 4;
+}
+
+.close-button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.menu-title {
+  font-family: 'Inter', sans-serif;
+}
+
+.dessertName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.alt-model {
+  text-align: start;
+  margin-left: 10px;
+  height: 100%;
+}
+
+/* Medya sorguları */
+@media (min-width: 600px) {
+  .dessert-card {
+    width: 48%; /* Orta ekranlarda iki sütun */
+  }
+}
+
+@media (min-width: 900px) {
+  .dessert-card {
+    width: 30%; /* Büyük ekranlarda üç sütun */
+  }
+
+  .modal-content {
+    flex-direction: row; /* Büyük ekranlarda modal içerik yatay düzende */
+  }
+}
+
+@media (min-width: 1200px) {
+  .dessert-card {
+    width: 22%; /* Çok büyük ekranlarda dört sütun */
+  }
+
+  .desserts-flex {
+    justify-content: flex-start; /* Geniş ekranlarda kartlar sola yaslanacak */
+    gap: 20px;
+  }
+
+  .modal-content {
+    flex-direction: row; /* Modal içerik geniş ekranda da yatay olur */
+  }
+}
