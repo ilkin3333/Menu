@@ -2,10 +2,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Veriyi çekmek için async thunk oluştur
+
 export const fetchMenu = createAsyncThunk('menu/fetchMenu', async () => {
   const response = await axios.get('http://localhost:5000/menu.json');
-  return response.data; // API'den gelen veriyi döndür
+  return response.data; 
 });
 
 const menuSlice = createSlice({

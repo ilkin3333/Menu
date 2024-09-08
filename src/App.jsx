@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMenu } from './ReduxStore/menuSlice';
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import All from './Pages/All';
 import Desserts from './Pages/Desserts';
